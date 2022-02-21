@@ -29,7 +29,11 @@ contract Artwork is ERC721 {
    }
 
    function _setTokenURI(uint256 _tokenId, string memory _tokenURI) internal virtual existing(_tokenId) {
-      tokenURIs[_tokenId] = _tokenURI;
+      _tokenURIs[_tokenId] = _tokenURI;
+   }
+
+   function _tokenURI(uint256 _tokenID) public view virtual override existing(_tokenId) returns (string memory) {
+      return _tokenURIs[_tokenId];
    }
 
 }
