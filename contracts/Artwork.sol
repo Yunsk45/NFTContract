@@ -14,7 +14,7 @@ contract Artwork is ERC721 {
       tokenCounter = 0;
    }
 
-    modifier existing(uint256 tokenId) {
+    modifier existing(uint256 _tokenId) {
        require(_exists(_tokenId),
         "ERC721Metadata: URI set of nonexistent token"
        );
@@ -32,7 +32,7 @@ contract Artwork is ERC721 {
       _tokenURIs[_tokenId] = _tokenURI;
    }
 
-   function _tokenURI(uint256 _tokenID) public view virtual override existing(_tokenId) returns (string memory) {
+   function tokenURI(uint256 _tokenId) public view virtual override existing(_tokenId) returns (string memory) {
       return _tokenURIs[_tokenId];
    }
 
