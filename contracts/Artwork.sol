@@ -11,4 +11,11 @@ contract Artwork is ERC721 {
    constructor(string memory name, string memory symbol) ERC721(name, symbol) {
       tokenCounter = 0;
    }
+
+   function mint(string memory _tokenURI) public {
+      _safeMint(msg.sender, tokenCounter);
+      _setTokenURI(tokenCounter, _tokenURI);
+
+      tokenCounter++;
+   }
 }
