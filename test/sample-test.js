@@ -52,3 +52,5 @@ describe("Artwork Smart Contract tests", function() {
     expect(await artwork.tokenURI(1)).to.equal(tokenURI_2);
 
 });
+
+});
