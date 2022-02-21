@@ -6,7 +6,8 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract Artwork is ERC721 {
    
-   uint253 public tokenCounter;
+   uint256 public tokenCounter;
+
    
    constructor(string memory name, string memory symbol) ERC721(name, symbol) {
       tokenCounter = 0;
